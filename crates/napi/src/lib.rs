@@ -86,6 +86,10 @@ mod cleanup_env;
 mod env;
 mod error;
 mod js_values;
+#[cfg(feature = "napi3")]
+mod lifecycle;
+#[cfg(feature = "napi3")]
+pub use lifecycle::Lifecycle;
 mod status;
 mod task;
 #[cfg(all(feature = "tokio_rt", feature = "napi4"))]
